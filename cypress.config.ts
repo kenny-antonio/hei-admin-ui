@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export default defineConfig({
+  projectId: 'ytj8pw',
   viewportHeight: 1080,
   viewportWidth: 1920,
   defaultCommandTimeout: 25_000,
