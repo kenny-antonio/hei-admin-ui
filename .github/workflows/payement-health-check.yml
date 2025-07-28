@@ -1,4 +1,4 @@
-name: app-health-check
+name: Payement health check
 
 on:
   schedule:
