@@ -50,5 +50,9 @@ export default defineConfig({
     codeCoverage: {
       exclude: ["cypress/**/*.*", "src/**/*.cy", "src/providers/**/*.*"],
     },
+    REACT_APP_CASDOOR_SDK_SERVER_URL:
+      process.env.REACT_APP_CASDOOR_SDK_SERVER_URL,
+    REACT_APP_MANAGER_EMAIL:
+      process.env.REACT_APP_MANAGER_EMAIL
   },
 });
