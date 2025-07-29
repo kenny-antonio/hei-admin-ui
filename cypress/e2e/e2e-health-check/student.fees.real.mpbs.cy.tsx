@@ -45,10 +45,9 @@ describe("Mobile payment by student", () => {
     cy.origin(${{ secrets.REACT_APP_CASDOOR_SDK_SERVER_URL }}), () => {
       cy.get(
         "input[placeholder='identifiant, adresse e-mail ou téléphone']"
-      ).type(${{ secrets.REACT_APP_TEST_MANAGER1_EMAIL }});
+      ).type(${{ secrets.REACT_APP_TEST_STUDENT1_EMAIL }});
       cy.get("input[placeholder='Mot de passe']").type(
-        ${{ secrets.REACT_APP_TEST_MANAGER1_PASSWORD }}
-      );
+        ${{ secrets.REACT_APP_TEST_STUDENT1_PASSWORD }});
       cy.get("button[type='submit']").click();
     });
     cy.get(`a[href="/students/student1_id/fees"]`).click();
