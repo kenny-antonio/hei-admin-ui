@@ -32,6 +32,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set the public npm registry
+        run: npm config set registry https://registry.npmjs.org/
+
       - name: Run the test 
         uses: cypress-io/github-action@v6
         with:
