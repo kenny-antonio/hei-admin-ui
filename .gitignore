@@ -58,3 +58,5 @@ dist
 coverage
 
 .env
+.pre-commit-config.yaml
+.secrets.baseline

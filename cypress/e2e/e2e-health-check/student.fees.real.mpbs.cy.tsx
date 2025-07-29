@@ -4,14 +4,14 @@ describe("Mobile payment by student", () => {
   before("Create the test fee", () => {
     // realManagerLogin(Cypress.env("REACT_APP_TEST_MANAGER1_EMAIL"),Cypress.env("REACT_APP_TEST_MANAGER1_PASSWORD"))
 
-    cy.visit("/");
+    cy.visit(${{ secrets.HEI_ADMIN_PREPROD_URL }});
     cy.getByTestid("casdoor-login-btn").click();
-    cy.origin(Cypress.env("REACT_APP_CASDOOR_SDK_SERVER_URL"), () => {
+    cy.origin(${{ secrets.REACT_APP_CASDOOR_SDK_SERVER_URL }}), () => {
       cy.get(
         "input[placeholder='identifiant, adresse e-mail ou téléphone']"
-      ).type(Cypress.env("REACT_APP_TEST_MANAGER1_EMAIL"));
+      ).type(${{ secrets.REACT_APP_TEST_MANAGER1_EMAIL }});
       cy.get("input[placeholder='Mot de passe']").type(
-        Cypress.env("REACT_APP_TEST_MANAGER1_PASSWORD")
+        ${{ secrets.REACT_APP_TEST_MANAGER1_PASSWORD }}
       );
       cy.get("button[type='submit']").click();
     });
@@ -40,14 +40,14 @@ describe("Mobile payment by student", () => {
 
   beforeEach("Connect with student role", () => {
     cy.wait(500);
-    cy.visit("/");
+    cy.visit(${{ secrets.HEI_ADMIN_PREPROD_URL }});
     cy.getByTestid("casdoor-login-btn").click();
-    cy.origin(Cypress.env("REACT_APP_CASDOOR_SDK_SERVER_URL"), () => {
+    cy.origin(${{ secrets.REACT_APP_CASDOOR_SDK_SERVER_URL }}), () => {
       cy.get(
         "input[placeholder='identifiant, adresse e-mail ou téléphone']"
-      ).type(Cypress.env("REACT_APP_TEST_STUDENT1_EMAIL"));
+      ).type(${{ secrets.REACT_APP_TEST_MANAGER1_EMAIL }});
       cy.get("input[placeholder='Mot de passe']").type(
-        Cypress.env("REACT_APP_TEST_STUDENT1_PASSWORD")
+        ${{ secrets.REACT_APP_TEST_MANAGER1_PASSWORD }}
       );
       cy.get("button[type='submit']").click();
     });
@@ -87,14 +87,14 @@ describe("Mobile payment by student", () => {
     //   Cypress.env("REACT_APP_TEST_MANAGER1_PASSWORD")
     // );
 
-    cy.visit("/");
+    cy.visit(${{ secrets.HEI_ADMIN_PREPROD_URL }});
     cy.getByTestid("casdoor-login-btn").click();
-    cy.origin(Cypress.env("REACT_APP_CASDOOR_SDK_SERVER_URL"), () => {
+    cy.origin(${{ secrets.REACT_APP_CASDOOR_SDK_SERVER_URL }}), () => {
       cy.get(
         "input[placeholder='identifiant, adresse e-mail ou téléphone']"
-      ).type(Cypress.env("REACT_APP_TEST_MANAGER1_EMAIL"));
+      ).type(${{ secrets.REACT_APP_TEST_MANAGER1_EMAIL }});
       cy.get("input[placeholder='Mot de passe']").type(
-        Cypress.env("REACT_APP_TEST_MANAGER1_PASSWORD")
+        ${{ secrets.REACT_APP_TEST_MANAGER1_PASSWORD }})
       );
       cy.get("button[type='submit']").click();
     });
