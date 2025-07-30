@@ -41,10 +41,9 @@ jobs:
         run: npm config set registry https://registry.npmjs.org/
 
       - name: Run the test 
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v6.5.0
         with:
           run: npx cypress run --spec cypress\e2e\e2e-health-check\student.fees.real.mpbs.cy.tsx
-          wait-on-timeout: 240 
 
       - name: Update Instatus page when failure
         if: ${{ failure() }}
